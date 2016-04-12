@@ -1,5 +1,5 @@
 /**
- * Created by Yseriu on 10/04/2016.
+ * Created by Baptiste Barbieri on 10/04/2016.
  */
 public interface Affichable {
     EnsembleCaracteres getEnsembleCaracteres();

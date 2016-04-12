@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Created by Yseriu on 10/04/2016.
+ * Created by Baptiste Barbieri on 10/04/2016.
  */
 public class Gorilla {
     private ArrayList<Movable> movables;

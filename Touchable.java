@@ -1,6 +1,6 @@
 /**
- * Created by Yseriu on 10/04/2016.
+ * Created by Baptiste Barbieri on 10/04/2016.
  */
 public interface Touchable {
-    public boolean estTouche(CaracterePositionne c);
+    boolean estTouche(CaracterePositionne c);
 }
