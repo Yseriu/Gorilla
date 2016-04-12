@@ -9,6 +9,7 @@ public class Gorilla {
     private Projectile projectile;
     private ArrayList<Affichable> affichables;
     private Fenetre f;
+    private int score;
 
     public Gorilla(Fenetre f) {
         String [] sprite ={
@@ -39,16 +40,19 @@ public class Gorilla {
         this.movables = new ArrayList<>();
         this.obstacles = new ArrayList<>();
         this.affichables = new ArrayList<>();
-        this.register(new Obstacle(30, 0, sprite));
-        this.projectile = new Projectile(7, 3, new EnsembleCaracteres(new String[]{"/ \\", "\\#/"}));
-        this.affichables.add(this.projectile);
-        this.movables.add(this.projectile);
     }
 
     public void register(Obstacle obstacle)
     {
         this.obstacles.add(obstacle);
         this.affichables.add(obstacle);
+    }
+
+    public void register(Projectile projectile)
+    {
+        this.projectile = projectile;
+        this.affichables.add(projectile);
+        this.movables.add(projectile);
     }
 
     public void afficher()
@@ -82,5 +86,14 @@ public class Gorilla {
                 return true;
         }
         return false;
+    }
+
+    public void incrementeScore(int v)
+    {
+        this.score += v;
+    }
+
+    public int getScore() {
+        return score;
     }
 }
