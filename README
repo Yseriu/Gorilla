@@ -1,0 +1,4 @@
+GORILLA
+
+Pour jouer, utilisez la commande suivante depuis le dossier contenant votre gorilla.jar:
+$ java -jar gorilla.jar [nombre_de_tours]

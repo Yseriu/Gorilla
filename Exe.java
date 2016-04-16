@@ -1,3 +1,5 @@
+import static java.lang.Math.random;
+
 /**
  * Created by Baptiste Barbieri on 10/04/2016.
  */
@@ -44,7 +46,7 @@ public class Exe {
         gorilla.register(new Cible(gorilla, 58, 17, new String[]{"+-+", "|3|", "+-+"}, 3));
         for (int i = 0; i < nbTours; i++)
         {
-            gorilla.register(new Projectile(xProj, yProj, new EnsembleCaracteres(sProj)));
+            gorilla.register(new Projectile(xProj, yProj, (random() - 0.5) * 0.8, new EnsembleCaracteres(sProj)));
             gorilla.afficher();
             gorilla.play();
         }
