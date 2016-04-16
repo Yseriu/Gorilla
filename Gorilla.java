@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -50,6 +51,11 @@ public class Gorilla {
 
     public void register(Projectile projectile)
     {
+        if (this.projectile != null)
+        {
+            this.affichables.remove(this.projectile);
+            this.movables.remove(this.projectile);
+        }
         this.projectile = projectile;
         this.affichables.add(projectile);
         this.movables.add(projectile);
@@ -74,7 +80,6 @@ public class Gorilla {
             this.afficher();
             this.f.pause(110);
         }
-        System.out.println("the end");
     }
 
     private boolean endTurn() {
@@ -95,5 +100,17 @@ public class Gorilla {
 
     public int getScore() {
         return score;
+    }
+
+    public void play()
+    {
+        this.afficher();
+        int angle = Integer.parseInt(JOptionPane.showInputDialog(null, "Votre score " + this.score + "\n Avec quel angle lancer la bombe ?", "Choix de l'angle de lancé", JOptionPane.QUESTION_MESSAGE));
+        int force = Integer.parseInt(JOptionPane.showInputDialog(null, "Votre score " + this.score + "\n Avec quel force lancer la bombe ?", "Choix de la force de lancé", JOptionPane.QUESTION_MESSAGE));
+        this.play(force, angle);
+    }
+
+    public void end() {
+        JOptionPane.showMessageDialog(null, "La partie est finie.\nVotre socre est " + this.score);
     }
 }

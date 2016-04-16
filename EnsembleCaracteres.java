@@ -12,7 +12,6 @@ class EnsembleCaracteres {
     public EnsembleCaracteres(String[] sprite)
     {
         this();
-        System.out.println(sprite.length);
         for (int i = 0; i < sprite.length; i++)
         {
             for (int j = 0; j < sprite[i].length(); j++)

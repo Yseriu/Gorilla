@@ -5,6 +5,8 @@ public class Projectile implements Affichable, Movable{
 
     private int x;
     private int y;
+    private int baseX;
+    private int baseY;
     protected double vitesseX;
     protected double vitesseY;
     protected double gravity;
@@ -53,7 +55,8 @@ public class Projectile implements Affichable, Movable{
     public Projectile(int x, int y, double wind, double gravity, EnsembleCaracteres ensembleCaracteres) {
         this.x = x;
         this.y = y;
-
+        this.baseX = x;
+        this.baseY = y;
         this.gravity = gravity;
         this.wind = wind;
         this.setEnsembleCaracteres(ensembleCaracteres);
@@ -90,8 +93,8 @@ public class Projectile implements Affichable, Movable{
     {
         for (CaracterePositionne c : this.ensembleCaracteres.caracteres)
         {
-            if (c.x <= 0 || c.x >= f.getNbColonnes()
-                    || c.y <= 0 || c.y >= f.getNbLignes())
+            if (c.x <= 0 || c.x >= f.getNbColonnes()-1
+                    || c.y <= 0 || c.y >= f.getNbLignes()-1)
                 return true;
         }
         return false;
@@ -102,6 +105,4 @@ public class Projectile implements Affichable, Movable{
         this.incrementY(y);
         this.ensembleCaracteres.decaler(x, y);
     }
-
-
 }
