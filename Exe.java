@@ -42,12 +42,11 @@ public class Exe {
         Gorilla gorilla = new Gorilla(new Fenetre());
         gorilla.register(new Obstacle(30, 0, sprite));
         gorilla.register(new Cible(gorilla, 58, 17, new String[]{"+-+", "|3|", "+-+"}, 3));
-        gorilla.register(new Projectile(xProj, yProj, new EnsembleCaracteres(sProj)));
-        gorilla.afficher();
         for (int i = 0; i < nbTours; i++)
         {
-            gorilla.play();
             gorilla.register(new Projectile(xProj, yProj, new EnsembleCaracteres(sProj)));
+            gorilla.afficher();
+            gorilla.play();
         }
         gorilla.end();
     }
